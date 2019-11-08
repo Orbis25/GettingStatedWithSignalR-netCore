@@ -354,7 +354,7 @@ healthchecksdb
 MigrationBackup/
 
 ~/GettingStatedWithSignalR/
-~/signalr-test/
+
 
 
 # End of https://www.gitignore.io/api/visualstudio
