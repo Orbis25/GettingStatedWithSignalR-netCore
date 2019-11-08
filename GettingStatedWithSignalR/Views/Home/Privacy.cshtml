@@ -1,0 +1,22 @@
+﻿@{
+    ViewData["Title"] = "Privacy Policy";
+}
+<h1>@ViewData["Title"]</h1>
+
+<p id="not"></p>
+<script src="~/js/signalr/dist/browser/signalr.js" asp-append-version="true"></script>
+<script>
+    const connection = new signalR.HubConnectionBuilder().withUrl("/notificationHub").build();
+
+    connection.on("Notify", (notify) => {
+        console.log("llamadi")
+        document.getElementById("not").innerHTML = notify;
+    });
+
+  
+    connection.start().then(() => {
+        console.log("conected :v")
+    }).catch((e) => console.log(e));
+
+
+</script>

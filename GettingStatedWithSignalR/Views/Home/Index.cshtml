@@ -1,0 +1,21 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+
+    <input name="user" id="name" /> <br />
+    <input name="message" id="message" /> <br />
+    <button id="btn">Enviar</button>
+
+
+    <div class="row">
+        <div class="col-12">
+            <div id="messageList"></div>
+        </div>
+    </div>
+
+
+</div>
+<script src="~/js/signalr/dist/browser/signalr.js" asp-append-version="true"></script>
+<script src="~/js/chat.js" asp-append-version="true"></script>
