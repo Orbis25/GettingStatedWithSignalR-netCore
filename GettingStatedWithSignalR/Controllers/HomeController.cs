@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using GettingStatedWithSignalR.Models;
 using Microsoft.AspNetCore.SignalR;
+using GettingStatedWithSignalR.Service;
 
 namespace GettingStatedWithSignalR.Controllers
 {
@@ -14,21 +15,23 @@ namespace GettingStatedWithSignalR.Controllers
     {
         private readonly ILogger<HomeController> _logger;
         private readonly IHubContext<Hubs.NotificationHub> _hubContext;
+        private readonly IDependencyService _service;
 
-        public HomeController(ILogger<HomeController> logger , IHubContext<Hubs.NotificationHub> hubContext)
+        public HomeController(ILogger<HomeController> logger, IHubContext<Hubs.NotificationHub> hubContext , IDependencyService service)
         {
             _logger = logger;
             _hubContext = hubContext;
+            _service = service;
         }
 
         public IActionResult Index()
         {
             return View();
         }
-        public async Task<IActionResult> Privacy()
+        [HttpGet]
+        public IActionResult Privacy()
         {
-            await _hubContext.Clients.All.SendAsync("Notify", $"Conected At {DateTime.Now}");
-            return View();
+            return View(_service.GetAll());
         }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]

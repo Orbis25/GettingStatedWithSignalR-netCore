@@ -24,7 +24,6 @@
     ".NETCoreApp,Version=v3.0": {
       "GettingStatedWithSignalR/1.0.0": {
         "dependencies": {
-          "Microsoft.AspNet.SignalR.Core": "2.4.1",
           "Microsoft.EntityFrameworkCore": "3.0.0",
           "Microsoft.EntityFrameworkCore.SqlServer": "3.0.0",
           "Microsoft.EntityFrameworkCore.Tools": "3.0.0",
@@ -318,17 +317,6 @@
         },
         "compile": {
           "GettingStatedWithSignalR.dll": {}
-        }
-      },
-      "Microsoft.AspNet.SignalR.Core/2.4.1": {
-        "runtime": {
-          "lib/net45/Microsoft.AspNet.SignalR.Core.dll": {
-            "assemblyVersion": "2.4.1.0",
-            "fileVersion": "2.4.1.19093"
-          }
-        },
-        "compile": {
-          "lib/net45/Microsoft.AspNet.SignalR.Core.dll": {}
         }
       },
       "Microsoft.AspNetCore.Html.Abstractions/2.2.0": {
@@ -3715,13 +3703,6 @@
       "type": "project",
       "serviceable": false,
       "sha512": ""
-    },
-    "Microsoft.AspNet.SignalR.Core/2.4.1": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-da5vF7ERsXAfFz2RzyXIV2VZACxsw+NxWwKtwXuHde7xuApvI/njJhpzq+LkoYpOYfzPZ8BbccaZ1yOaw1AQ4w==",
-      "path": "microsoft.aspnet.signalr.core/2.4.1",
-      "hashPath": "microsoft.aspnet.signalr.core.2.4.1.nupkg.sha512"
     },
     "Microsoft.AspNetCore.Html.Abstractions/2.2.0": {
       "type": "package",

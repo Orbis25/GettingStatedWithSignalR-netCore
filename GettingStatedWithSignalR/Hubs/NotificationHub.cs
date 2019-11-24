@@ -8,9 +8,9 @@ namespace GettingStatedWithSignalR.Hubs
 {
     public class NotificationHub : Hub
     {
-        public async Task Notify(string message)
+        public async Task Notify()
         {
-            await Clients.All.SendAsync("Notify", message);
+            await Clients.All.SendAsync("Notify");
         }
     }
 }

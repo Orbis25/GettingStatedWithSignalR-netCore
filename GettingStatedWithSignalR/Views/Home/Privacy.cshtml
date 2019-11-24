@@ -1,22 +1,38 @@
-﻿@{
-    ViewData["Title"] = "Privacy Policy";
+﻿@model IEnumerable<GettingStatedWithSignalR.Models.Person>
+@{
+    ViewData["Title"] = "SqlDependency";
 }
 <h1>@ViewData["Title"]</h1>
+<p>FOR YOU TESTING THIS FEATURE, YO NEED ADD THE PERSONS IN DATABASE FOR YOU CHECK THE REALTIME RELOAD THE LIST OF PERSONS </p>
 
-<p id="not"></p>
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">Nombre</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <th scope="row">@item.Name</th>
+            </tr>
+        }
+    </tbody>
+</table>
+
+
+
 <script src="~/js/signalr/dist/browser/signalr.js" asp-append-version="true"></script>
 <script>
     const connection = new signalR.HubConnectionBuilder().withUrl("/notificationHub").build();
 
-    connection.on("Notify", (notify) => {
-        console.log("llamadi")
-        document.getElementById("not").innerHTML = notify;
+    connection.on("Notify", () => {
+        location.reload();
     });
-
   
     connection.start().then(() => {
         console.log("conected :v")
     }).catch((e) => console.log(e));
-
 
 </script>
