@@ -6,4 +6,5 @@ This repository is a repo... for to create examples with SignalR in .netCore and
 <ul>
 <li>vuejs spa client</li>
 <li>Web App .netCore</li>
+<li>SqlDependency</li>
 </ul>
